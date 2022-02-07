@@ -11,14 +11,18 @@ function App() {
         type="button"
         disabled={disabled}
         onClick={() => setButtonColor(newButtonColor)}
-        style={{ backgroundColor: buttonColor }}>
+        style={{ backgroundColor: disabled ? "gray" : buttonColor }}>
         Change to {newButtonColor}
       </button>
+      <br />
       <input
         type="checkbox"
+        id="disable-button-checkbox"
         defaultChecked={disabled}
+        aria-checked={disabled}
         onChange={(e) => setDisabled(e.target.checked)}
       />
+      <label htmlFor="disable-button-checkbox">Disable button</label>
     </div>
   );
 }
